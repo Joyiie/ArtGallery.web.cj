@@ -1,0 +1,18 @@
+﻿@using ArtGallery.CJ.WEB.Infrastructure.Security;
+@{ Layout = "~/Views/Shared/_Layout.cshtml"; }
+
+
+
+@{
+    var user = this.User;
+
+    if (this.User != null)
+    {
+        <div>
+            <h6>
+                <a class="nav-link" href="~/">You're Logged In @user.GetFullName()</a>
+            </h6>
+        </div>
+        }
+    }
+

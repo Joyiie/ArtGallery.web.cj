@@ -1,0 +1,44 @@
+﻿@{ Layout = "~/Views/Shared/_Layout.cshtml"; }
+
+@{ if (Model.Artworks != null)
+                {
+                    if (Model.Artworks.Items != null)
+                    {
+                        if (Model.Artworks.Items.Count > 0)
+                        {
+
+    <div class="row">
+        <div class="col-12 col-sm-12">
+            <table class="table table-bordered table-primary table table-responsive ">
+                <thead>
+                    <tr>
+                        <th class="text-center col-3">Title</th>
+                        <th class="text-center">Artist</th>
+                        <th class="text-center">ArtID</th>
+                        <th class="text-center"><a href="#" onclick="newUser()"><i class="fas fa-plus"></i></a></th>
+                    </tr>
+                </thead>
+                <tbody>
+
+                    @{ foreach (var Art in Model.Artworks.Items)
+                        {
+                                        <tr>
+                                            <td>@Art.Title</td>
+                                            <td>@Art.Content</td>
+                                            <td>@Art.Medium</td>
+                                            <td>@Art.Year</td>
+
+
+
+
+                                            <td>
+                                                <a href="#"><i class="fas fa-pen-nib"></i></a>
+                                                <a href="#" onclick="confirmDelete('Art.Title', 'Art.Content', 'Art.Medium','Art.Year')"><i class="fas fa-trash"></i></a>
+                                            </td>
+                                        </tr> } }
+                </tbody>
+            </table>
+        </div>
+    </div> }
+                    }
+                } }
